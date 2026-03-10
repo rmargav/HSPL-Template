@@ -6436,9 +6436,10 @@ THEMEFOREST REQUIRED CLASSES
   width: 30px;
   height: 30px;
   line-height: 30px;
-  padding: 0px;
+  padding: 20px;
+  margin: 10px;
   color: #ea130e;
-  font-size: 14px;
+  font-size: 25px;
   padding-right: 15px;
 }
 .footer-dark .social-icons li a:hover {
