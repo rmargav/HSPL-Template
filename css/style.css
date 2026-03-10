@@ -6658,14 +6658,14 @@ button.scroltop {
   z-index: 999;
   color: #fff;
   box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in;
 }
 
 /* icon */
-button.scroltop span {
+/* button.scroltop span {
   font-size: 22px;
   line-height: 50px;
-}
+} */
 
 /* hover effect */
 button.scroltop:hover {
@@ -8814,6 +8814,13 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 }
 .service-icon-box-one .service-icon-box-content p {
   margin-bottom: 30px;
+}
+
+.service-icon-box-one img{
+    /* width:150px; */
+    height:180px;
+    object-fit:contain;
+    margin-left: 25px;
 }
 
 .service-icon-box-two {
