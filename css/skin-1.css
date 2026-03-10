@@ -1,0 +1,511 @@
+.site-text-primary,
+.wt-small-separator {
+  color: #ea130e;
+}
+
+.site-bg-primary {
+  background-color: #ea130e;
+}
+
+.about-gym-one::after {
+  border-color: #ea130e;
+}
+
+.steps-section::after {
+  background-color: #ea130e;
+}
+
+/*Center-title*/
+.section-head.left.wt-small-separator-outer .wt-small-separator div.sep-leaf-left:before, .section-head.left.wt-small-separator-outer .wt-small-separator div.sep-leaf-left:after {
+  background-color: #ea130e;
+}
+.section-head.center .wt-small-separator div.sep-leaf-left:before, .section-head.center .wt-small-separator div.sep-leaf-left:after {
+  background-color: #ea130e;
+}
+
+/*Widget Services*/
+.widget_services ul li a:before {
+  color: #ea130e;
+}
+
+.site-button {
+  background-color: #ea130e;
+}
+.site-button:active, .site-button:focus, .site-button:visited {
+  background-color: #ea130e;
+}
+
+.ap-btn:hover:after {
+  background: #ea130e;
+}
+.ap-btn i {
+  background: #ea130e;
+}
+
+.ap-btn2 i {
+  background-color: #ea130e;
+}
+
+/*---Owl slider button---*/
+.owl-prev {
+  background-color: #ea130e;
+  border-color: #ea130e;
+}
+.owl-prev:hover, .owl-prev:active, .owl-prev:focus {
+  background-color: #ea130e;
+  border-color: #ea130e;
+}
+
+.owl-next {
+  background-color: #ea130e;
+  border-color: #ea130e;
+}
+.owl-next:hover, .owl-next:active, .owl-next:focus {
+  background-color: #ea130e;
+  border-color: #ea130e;
+}
+
+/*Footer dark version css*/
+.footer-dark .widget-title:before {
+  background-color: #ea130e;
+}
+.footer-dark .social-icons li a {
+  color: #ea130e;
+}
+
+.widget_address li i {
+  color: #ea130e;
+}
+
+.play-now-video .icon {
+  color: #ea130e;
+}
+
+/*Revolution Slider Button*/
+.rev-btn .site-button {
+  background-color: #ea130e;
+}
+
+.bullet-bar .tp-bullet:hover, .bullet-bar .tp-bullet.selected {
+  background: #ea130e !important;
+}
+
+/*Revolution slider play btn*/
+.tp-caption .rev-img-circle:after {
+  background-color: #ea130e;
+}
+
+/*Header Style One*/
+.header-style-1 .top-bar .wt-topbar-left-info li i {
+  color: #ea130e;
+}
+.header-style-1 .top-bar .wt-topbar-right-info ul li a:hover {
+  background-color: #ea130e;
+}
+.header-style-1 .header-nav .nav > li .sub-menu li:hover > a {
+  color: #ea130e;
+}
+.header-style-1 .extra-nav .extra-cell .header-search .header-search-icon:hover i {
+  color: #ea130e;
+}
+
+/*Header Style two*/
+.header-style-2 .top-bar .wt-topbar-left-info li i {
+  color: #ea130e;
+}
+.header-style-2 .top-bar .wt-topbar-right-info ul li a:hover {
+  background-color: #ea130e;
+}
+.header-style-2 .extra-nav .extra-cell .header-search .header-search-icon:hover i {
+  color: #ea130e;
+}
+.header-style-2 .header-nav .nav > li > a::after {
+  background-color: #ea130e;
+}
+.header-style-2 .header-nav .nav > li .sub-menu li:hover > a {
+  color: #ea130e;
+}
+
+/*Header Style two*/
+.header-style-3 .top-bar .wt-topbar-left-info li i {
+  color: #000;
+}
+.header-style-3 .extra-nav .extra-cell .header-search .header-search-icon:hover i {
+  color: #ea130e;
+}
+.header-style-3 .header-nav .nav > li > a::after {
+  background-color: #ea130e;
+}
+.header-style-3 .header-nav .nav > li .sub-menu li:hover > a {
+  color: #ea130e;
+}
+
+/*About three Section*/
+.about-section-three .about-max-three .about-three .about-year .about-year-info {
+  border-left: 5px solid #ea130e;
+}
+.about-section-three .about-max-three .about-three .about-year .about-year-info span {
+  color: #ea130e;
+}
+
+.service-box-three {
+  border: 3px solid #ea130e;
+}
+
+/*Slider Circle*/
+.slider-block-2 {
+  background-color: #ea130e;
+}
+
+/*About one Section*/
+.about-max-one:after {
+  background-color: #ea130e;
+}
+
+.about-one .about-year .about-year-info span {
+  color: #ea130e;
+}
+
+/*About Year*/
+.about-two .about-year {
+  padding: 0px;
+}
+.about-two .about-year .about-year-info {
+  border-bottom: 5px solid #ea130e;
+}
+.about-two .about-year .about-year-info span {
+  color: #ea130e;
+}
+
+/*Team Style One*/
+.wt-team-1 .wt-info .team-detail .team-position {
+  color: #ea130e;
+}
+.wt-team-1 .wt-info .team-detail .team-social-center ul li a:hover {
+  color: #ea130e;
+}
+.wt-team-1 .wt-info .team-detail:after {
+  background-color: #ea130e;
+}
+
+/*Team Style two*/
+.wt-team-2 .wt-info .team-detail .team-position {
+  color: #ea130e;
+}
+.wt-team-2 .wt-info .team-detail .team-social-center ul li a:hover {
+  color: #ea130e;
+}
+.wt-team-2 .wt-info .team-detail:after {
+  background-color: #ea130e;
+}
+.wt-team-2 .wt-info .team-detail.white .team-social-center ul li a:hover {
+  color: #ea130e;
+}
+
+/*project style one*/
+.project-box-style1 .project-content .project-title {
+  background-color: #ea130e;
+}
+.project-box-style1 .project-content .project-title-large a:hover {
+  color: #ea130e;
+}
+.project-box-style1 .project-view .project-view-btn i {
+  background-color: #ea130e;
+}
+
+/*Testimonial*/
+.testimonial-2-content .testimonial-2:before {
+  background-color: #ea130e;
+}
+.testimonial-2-content .testimonial-2 .testimonial-content .testimonial-info .testimonial-position {
+  color: #ea130e;
+}
+.testimonial-2-content .testimonial-2 .testimonial-content .testimonial-text i {
+  color: #ea130e;
+}
+
+.testimonial-3-content .testimonial-3:before {
+  background-color: #ea130e;
+}
+.testimonial-3-content .testimonial-3 .testimonial-content .testimonial-info .testimonial-position {
+  color: #ea130e;
+}
+.testimonial-3-content .testimonial-3 .testimonial-content .testimonial-text i {
+  color: #ea130e;
+}
+
+/*Footer Light version css*/
+.footer-light .widget-title:before {
+  background-color: #ea130e;
+}
+.footer-light .social-icons li a {
+  color: #ea130e;
+}
+
+/*---Buttons--- */
+.site-button-link {
+  color: #ea130e;
+}
+.site-button-link:after {
+  background-color: #ea130e;
+}
+
+/*Testimonial*/
+.testimonial-1-content .testimonial-1 .testimonial-info .testimonial-position {
+  color: #ea130e;
+}
+.testimonial-1-content .testimonial-1 .testimonial-text i {
+  font-size: 30px;
+  line-height: 30px;
+  color: #ea130e;
+}
+
+/*Blog Post 4*/
+.blog-post-4-outer .wt-post-info .wt-post-meta ul li.post-date {
+  background-color: #ea130e;
+}
+.blog-post-4-outer .wt-post-info .wt-post-meta ul li.post-category {
+  color: #ea130e;
+}
+
+.rev-play-now .icon {
+  color: #ea130e;
+}
+.rev-play-now .ripple,
+.rev-play-now .ripple:before,
+.rev-play-now .ripple:after {
+  box-shadow: 0 0 0 0 #ea130e;
+}
+
+.about-gym-two:after {
+  border: 30px solid #ea130e;
+}
+
+/*--Breadcrumb --*/
+.wt-breadcrumb li a:hover {
+  color: #ea130e;
+}
+.wt-breadcrumb li:after {
+  color: #ea130e;
+}
+.wt-breadcrumb li:last-child {
+  color: #ea130e;
+}
+
+.wt-bnr-inr-entry .banner-title-outer .banner-title-name {
+  border-left: 12px solid #ea130e;
+}
+
+/* filter buttons css */
+.filter-wrap .masonry-filter li:before {
+  background: #ea130e;
+}
+
+/*---Owl dots button---*/
+.owl-carousel .owl-dots .owl-dot:hover span {
+  background: #ea130e;
+}
+
+.about-max-four .about-four .about-year .about-year-info span {
+  color: #ea130e;
+}
+
+.header-style-4 .extra-nav .extra-cell .header-search .header-search-icon {
+  background-color: #ea130e;
+}
+
+.info-list-1 li .title {
+  color: #ea130e;
+}
+
+/*Error Page*/
+.page-notfound strong {
+  color: #ea130e;
+}
+
+/*Pagination Style*/
+.pagination-outer .pagination-style1 ul li a:hover {
+  background-color: #ea130e;
+}
+
+/*Blog Side Bar*/
+.side-bar .search-bx .input-group-btn .btn {
+  background-color: #ea130e;
+}
+.side-bar .widget-insta-post ul li a:before {
+  background-color: #ea130e;
+}
+.side-bar .widget_services ul li a:hover {
+  color: #ea130e;
+}
+
+/*-----All Services------*/
+.all_services ul li a:hover {
+  color: #ea130e;
+}
+.all_services ul li a.active {
+  color: #ea130e;
+}
+
+blockquote .fa-quote-left {
+  color: #ea130e;
+}
+
+/*Team Style three*/
+.wt-team-3 .team-detail .team-position {
+  color: #ea130e;
+}
+.wt-team-3 .team-social-center ul li a {
+  background-color: #ea130e;
+}
+
+/*Team-box-single*/
+.team-box-single .team-detail .team-position {
+  color: #ea130e;
+}
+.team-box-single .team-detail .team-detail-social ul li a {
+  background-color: #ea130e;
+}
+
+/*Pricing Table 2*/
+.pricing-table-2 .p-table-price span {
+  color: #ea130e;
+}
+
+/*Project Outer 2*/
+.project-outer2 .project-style-2 .wt-info a {
+  background-color: #ea130e;
+}
+.project-outer2 .project-content .project-category {
+  color: #ea130e;
+}
+
+/*Gallery single*/
+.project-img-effect-1 .wt-info .project-title {
+  background-color: #ea130e;
+}
+.project-img-effect-1 .wt-info .project-title-large:hover {
+  color: #ea130e;
+}
+
+/*Widget Team*/
+.widget_team .team-social-center ul li a:hover {
+  color: #ea130e;
+}
+
+/*Blog Side Bar*/
+.side-bar .search-bx .input-group-btn .btn {
+  background-color: #ea130e;
+}
+.side-bar .widget-insta-post ul li a:before {
+  background-color: #ea130e;
+}
+.side-bar .widget_services ul li a:hover {
+  color: #ea130e;
+}
+.side-bar .widget_services ul li .badge {
+  color: #ea130e;
+}
+.side-bar .recent-posts-entry .wt-post-info .post-date {
+  color: #ea130e;
+}
+
+/*Blog post single*/
+.blog-post-style-2.blog-post-single .wt-post-meta ul li a:hover {
+  color: #ea130e;
+}
+.blog-post-style-2.blog-post-single blockquote .fa-quote-left {
+  color: #ea130e;
+}
+
+/*--Comment list--*/
+ol.comment-list li.comment .comment-meta a {
+  color: #ea130e;
+}
+ol.comment-list li.comment .reply .comment-reply-link {
+  background-color: #ea130e;
+}
+
+/*Contact Form*/
+.contact-one .contact-info:after {
+  background-color: #ea130e;
+}
+
+/*Loading Icon*/
+.cssload-spinner:after {
+  border: 4px solid #ea130e;
+}
+
+.header-style-3 .ap-btn2 i {
+  background-color: #ea130e;
+}
+@media (max-width: 480px) {
+  .header-style-3 .ap-btn2 i {
+    background-color: transparent;
+  }
+}
+
+#search .search-btn i {
+  color: #ea130e;
+}
+
+.contact-nav .wt-title {
+  color: #ea130e;
+}
+
+.wt-team-4 .wt-info .team-detail .team-position {
+  color: #ea130e;
+}
+.wt-team-4 .wt-info .team-social-center ul li a:after {
+  background-color: #ea130e;
+}
+
+/*Header Style four*/
+.header-style-4 .top-bar .wt-topbar-right-info ul li a:hover {
+  background-color: #ea130e;
+}
+.header-style-4 .header-nav .nav > li .sub-menu li:hover > a {
+  color: #ea130e;
+}
+.header-style-4 .header-nav .nav > li > a::after {
+  background-color: #ea130e;
+}
+
+/*Latest Blog*/
+.latest-blog-4 .wt-post-info .post-date {
+  background-color: #ea130e;
+}
+
+/*Testimonial 4*/
+.testimonial-4-content .testimonial-4 .testimonial-info .testimonial-position {
+  color: #ea130e;
+}
+.testimonial-4-content .testimonial-4 .testimonial-text i {
+  color: #ea130e;
+}
+
+.header-style-2 .ap-btn2 {
+  background-color: #ea130e;
+}
+.header-style-2 .ap-btn2 i {
+  background-color: #ea130e;
+}
+
+@media (max-width: 991px) {
+  .header-style-3 .header-nav .nav > li > a:after {
+    display: none;
+  }
+  .header-style-3 .header-nav .nav > li > a:hover {
+    color: #000;
+    background-color: #fff;
+  }
+}
+@media (max-width: 991px) {
+  .header-style-4 .header-nav .nav > li > a:after {
+    display: none;
+  }
+  .header-style-4 .header-nav .nav > li > a:hover {
+    color: #000;
+    background-color: #fff;
+  }
+}/*# sourceMappingURL=skin-1.css.map */
