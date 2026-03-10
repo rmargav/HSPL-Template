@@ -6642,28 +6642,40 @@ THEMEFOREST REQUIRED CLASSES
   font-size: 14px;
 }
 
-/*scroll top btn css*/
+/* Scroll Top Button */
 button.scroltop {
-  height: 40px;
-  width: 40px;
-  background: #1d1b18;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#1a1a1a,#000000);
   border: none;
   position: fixed;
-  right: 15px;
-  bottom: 15px;
-  text-transform: uppercase;
-  margin: 0;
-  padding: 0;
+  right: 20px;
+  bottom: 20px;
   cursor: pointer;
   display: none;
   text-align: center;
   z-index: 999;
   color: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
 }
+
+/* icon */
 button.scroltop span {
-  display: block;
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 22px;
+  line-height: 50px;
+}
+
+/* hover effect */
+button.scroltop:hover {
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+/* click effect */
+button.scroltop:active {
+  transform: scale(0.95);
 }
 
 /*Revolution slider*/
