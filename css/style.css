@@ -8836,6 +8836,14 @@ ol.comment-list li.comment .comment-respond .comment-form p {
   padding-right: 60px;
   font-size: 20px;
 }
+
+.service-icon-box-two img{
+    /* width:150px; */
+    height:180px;
+    object-fit:contain;
+    margin-left: 25px;
+}
+
 @media (max-width: 767px) {
   .service-icon-box-two .service-icon-box-title .wt-title {
     padding-right: 0px;
