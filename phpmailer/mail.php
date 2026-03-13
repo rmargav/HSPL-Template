@@ -1,68 +1,55 @@
 <?php
-//Import PHPMailer classes into the global namespace
-//These must be at the top of your script, not inside a function
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
 
-//Load Composer's autoloader
-require 'vendor/autoload.php';
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-//Create an instance; passing `true` enables exceptions
-$mail = new PHPMailer(true);
-if ( isset( $_POST['action'] ) ){
+    // 🛑 1. PUT YOUR CLIENT'S EMAIL HERE 🛑
+    $to = "client-email@gmail.com"; 
 
-$name = filter_var( $_POST['username'], FILTER_SANITIZE_STRING );
-$from_email = filter_var( $_POST['email'], FILTER_SANITIZE_EMAIL );
-$phone = filter_var( $_POST['phone'], FILTER_SANITIZE_STRING );
-$subject = filter_var( $_POST['subject'], FILTER_SANITIZE_STRING );
-$message = filter_var( $_POST['message'], FILTER_SANITIZE_STRING );
+    // Collect form data (Matching the 'name' attributes in your HTML)
+    $name         = strip_tags(trim($_POST['username']));
+    $email        = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
+    $phone        = strip_tags(trim($_POST['phone']));
+    $user_subject = strip_tags(trim($_POST['subject']));
+    $message      = strip_tags(trim($_POST['message']));
 
-$email_body = "You have Received a message from: " . $name . " <br/>";
-	
-$email_body .= "Subject: " . $subject . " <br/>";
+    $subject = "New Website Inquiry: " . $user_subject;
 
-$email_body .= "Phone: " . $phone . " <br/>";
+    // Email content
+    $body = "
+    <h2>New Contact Form Submission</h2>
+    <p><strong>Name:</strong> $name</p>
+    <p><strong>Email:</strong> $email</p>
+    <p><strong>Phone:</strong> $phone</p>
+    <p><strong>Subject:</strong> $user_subject</p>
+    <p><strong>Message:</strong><br>" . nl2br($message) . "</p>
+    ";
 
-$email_body .= "You can contact " . $name . " via email, " . $from_email ;
+    // Headers
+    $headers  = "MIME-Version: 1.0\r\n";
+    $headers .= "Content-type:text/html;charset=UTF-8\r\n";
+    
+    // 🛑 2. AVOID SPAM FILTERS ON BIGROCK 🛑
+    // Using a domain email prevents Gmail/Yahoo from blocking the message
+    $headers .= "From: $email\r\n";  // info@hspl.in.net this email id was there, replaced $email
+    
+    // This allows your client to hit 'Reply' and email the user directly
+    $headers .= "Reply-To: $email\r\n";
 
-$email_body .= $message . " <br/><br/>";
-
-try {
-    //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-    $mail->isSMTP();                                            //Send using SMTP
-   
-	$mail->Host       = 'smtp.hostinger.com';                     //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'help@thewebmax.org';                     //SMTP username
-    $mail->Password   = '*****';  
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-	$mail->SMTPDebug  = 0;
-
-    //Recipients
-    $mail->setFrom('help@thewebmax.org', 'thewebmax');
-    $mail->addAddress('thewebmaxhelp@gmail.com', 'The Webmax Support');     //Add a recipient
-    $mail->addReplyTo('thewebmaxhelp@gmail.com', 'Information');
-
-    //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = $subject;
-    $mail->Body    = $email_body;
-    //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients for the webmax';
-
-    $mail->send();
-	 echo json_encode(array(
-            'success' => true,
-            'message' => "Message Sent Successfully!"
-        ));
-} catch (Exception $e) {
-	echo json_encode(array(
-            'success' => false,
-            'message' => "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"
-        )
-    );
+    // Send mail and output JavaScript for the alert box
+    if (mail($to, $subject, $body, $headers)) {
+        // Success: Show alert and send them back to the contact page
+        // Note: Using document.referrer sends them back to the exact page they came from
+        echo "<script>
+                alert('Message sent successfully!'); 
+                window.location.href = document.referrer;
+              </script>";
+    } else {
+        // Failure: Show alert and let them try again
+        echo "<script>
+                alert('Message failed to send. Please try again later.'); 
+                window.history.back();
+              </script>";
+    }
 }
-die;
-}
+
+?>
