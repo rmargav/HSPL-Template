@@ -65,11 +65,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // File Attachment Handle Karna (Agar user ne sketch upload kiya hai)
     if (isset($_FILES['installation_sketch']) && $_FILES['installation_sketch']['error'] == UPLOAD_ERR_OK) {
+        
+        // --- SIZE CHECK ---
+        if ($_FILES['installation_sketch']['size'] > 5242880) { // 5MB in bytes
+            die("<script>alert('Error: File is too large. Please keep it under 5MB.'); window.history.back();</script>");
+        }
+        // -----------------------------
+
         $file_tmp_name  = $_FILES['installation_sketch']['tmp_name'];
         $file_name      = $_FILES['installation_sketch']['name'];
         $file_type      = $_FILES['installation_sketch']['type'];
         
         $file_content = file_get_contents($file_tmp_name);
+
         $encoded_content = chunk_split(base64_encode($file_content));
 
         $message .= "--$boundary\r\n";
