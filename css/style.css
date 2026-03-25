@@ -6736,8 +6736,8 @@ button.scroltop:active {
   .whatsapp-chat-btn {
     left: 12px;
     bottom: 16px;
-    width: 45px;  /* Slightly smaller on mobile */
-    height: 45px;
+    width: 55px;  /* Slightly smaller on mobile */
+    height: 55px;
     font-size: 1.5rem;
   }
 
