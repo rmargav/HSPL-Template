@@ -1667,7 +1667,7 @@ ol li {
   text-align: center;
 }
 .wt-icon-box-sm i {
-  font-size: 30px;
+  font-size: 48px;
 }
 .wt-icon-box-sm img {
   height: 30px;
@@ -1711,6 +1711,12 @@ ol li {
   vertical-align: middle;
   max-width: 100%;
   width: auto;
+}
+
+@media (max-width: 991px) {
+  .wt-icon-box-sm i {
+  font-size: 20px;
+}
 }
 
 /*----For only icons---*/
