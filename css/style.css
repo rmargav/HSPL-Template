@@ -79,6 +79,7 @@ This files [Table of contents] are outlined below
 ** - Footer dark version css
 ** - Footer_Block
 ** - scroll top btn css
+** - WhatsApp Button Styles
 ** - Revolution slider
 ** - revolution slider dotts style Start
 ** - Revolution Slider Button
@@ -6637,6 +6638,112 @@ button.scroltop:hover {
 /* click effect */
 button.scroltop:active {
   transform: scale(0.95);
+}
+
+/* WhatsApp Button Styles */
+.whatsapp-chat-btn {
+  position: fixed;
+  left: 20px;  /* Adjusted to match Scroll Top button */
+  bottom: 20px;  /* Adjusted to match Scroll Top button */
+  z-index: 9999;
+  background: linear-gradient(135deg, #0a8447, #008C53); /* Green gradient background */
+  color: #fff; /* White icon color */
+  border-radius: 50%;
+  width: 55px;  /* Outer button size */
+  height: 55px; /* Outer button size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);  /* Similar box shadow */
+  transition: all 0.3s ease-in;  /* Smooth transition for effects */
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+  font-size: 2.2rem;  /* You can adjust if needed */
+  border: none;  /* Remove border */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+/* WhatsApp Icon (Initially White) */
+.whatsapp-chat-btn .fa-whatsapp {
+  color: white;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12));
+}
+
+/* Inner Circle (Pseudo-element) */
+.whatsapp-chat-btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;  /* Full width of outer button */
+  height: 100%; /* Full height of outer button */
+  border-radius: 50%;
+  padding: 0.5px;
+  background: #0a8447; /* Green background for inner circle */
+  border: 2px solid white;  /* White border around inner circle */
+  z-index: -1;
+  transition: background 0.2s;
+}
+
+/* Hover Effect on the Button */
+.whatsapp-chat-btn:hover {
+  transform: translateY(-4px) scale(1.08); /* Slight hover effect */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);  /* Hover shadow effect */
+}
+
+/* Hover Effect on the Inner Circle */
+.whatsapp-chat-btn:hover::before {
+  background: #111111;  /* Dark background for the inner circle on hover */
+}
+
+/* Click Effect: Shrink when clicked */
+.whatsapp-chat-btn:active {
+  transform: scale(0.95);  /* Shrinks the button on click */
+}
+
+/* Tooltip Styling */
+.whatsapp-tooltip {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  left: 110%;  /* Position the tooltip on the left */
+  bottom: 50%;
+  transform: translateY(50%);
+  background: rgba(17, 17, 17, 0.7);
+  color: #fff;
+  padding: 0.5em 1em;
+  border-radius: 8px;
+  font-size: 1rem;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(199, 246, 240, 0.18);
+  transition: opacity 0.2s;
+  backdrop-filter: blur(6px);
+  border: 2px solid;
+}
+
+/* Tooltip Visibility on Hover */
+.whatsapp-chat-btn:hover .whatsapp-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 576px) {
+  .whatsapp-chat-btn {
+    left: 12px;
+    bottom: 16px;
+    width: 45px;  /* Slightly smaller on mobile */
+    height: 45px;
+    font-size: 1.5rem;
+  }
+
+  .whatsapp-tooltip {
+    font-size: 0.9rem;
+  }
 }
 
 /*Revolution slider*/
