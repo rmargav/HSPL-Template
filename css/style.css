@@ -6586,15 +6586,17 @@ THEMEFOREST REQUIRED CLASSES
   color: #aeaeae;
   font-weight: 400;
   position: relative;
-  padding: 2px 0px 0px 20px;
-  display: block;
+  padding: 2px 0px 4px 20px;
+  display: inline-block; /* important change */
   margin-left: 0px;
   transition: 0.5s all ease;
   font-size: 14px;
 }
+
 .widget_services ul li a:hover {
   margin-left: 10px;
 }
+
 .widget_services ul li a:before {
   content: "\f04b";
   font-family: "FontAwesome";
@@ -6603,6 +6605,21 @@ THEMEFOREST REQUIRED CLASSES
   font-size: 8px;
   top: 6px;
   color: #008dd4;
+}
+
+.widget_services ul li a::after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background-color: #008dd4;
+  transition: width 0.3s ease;
+}
+
+.widget_services ul li a:hover::after {
+  width: 85%;
 }
 
 .widget_about p {
