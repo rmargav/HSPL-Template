@@ -3,7 +3,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // 🛑 1. PUT YOUR CLIENT'S EMAIL HERE 🛑
-    $to = "client-email@gmail.com"; 
+    $to = "sales@hspl.in.net"; 
 
     // Collect form data (Matching the 'name' attributes in your HTML)
     $name         = strip_tags(trim($_POST['username']));
