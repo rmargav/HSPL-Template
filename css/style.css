@@ -8133,7 +8133,7 @@ button.scroltop:active {
 
 .service-icon-box-one {
   position: relative;
-  padding: 40px 40px 40px 40px;
+  padding: 40px 20px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   margin: 20px;
 }
@@ -8158,7 +8158,7 @@ button.scroltop:active {
 
 .service-icon-box-two {
   position: relative;
-  padding: 40px 40px 40px 40px;
+  padding: 40px;
   border: 1px solid #e7e7e7;
 }
 .service-icon-box-two .wt-icon-box-wraper {
@@ -8171,10 +8171,10 @@ button.scroltop:active {
 }
 
 .service-icon-box-two img{
-    /* width:150px; */
-    height:180px;
+    /* width:350px; */
+    height:380px;
     object-fit:contain;
-    margin-left: 25px;
+    /* margin-left: 25px; */
 }
 
 @media (max-width: 767px) {
