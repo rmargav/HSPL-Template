@@ -6048,12 +6048,12 @@ THEMEFOREST REQUIRED CLASSES
 }
 .video-with-content .video-section-two {
   position: relative;
-  height: 380px;
-  margin-top: 50px;
+  height: 480px;
 }
 @media (max-width: 991px) {
   .video-with-content .video-section-two {
-    margin-top: 38px;
+    /* margin-top: 38px; */
+    height: 280px;
   }
 }
 
@@ -8248,7 +8248,7 @@ button.scroltop:active {
 }
 @media (max-width: 991px) {
   .future-section-outer .future-section-left {
-    height: 500px;
+    height: 360px;
   }
 }
 .future-section-outer .future-section-right {
