@@ -215,12 +215,67 @@
                 /* Prevents zoom on iPhone */
             }
         }
+
+        /* top logo css */
+        .top-logo {
+            position: absolute;
+            top: 20px;
+            right: 15px;
+            height: 35px;
+            /* adjust size */
+        }
+
+        .container {
+            position: relative;
+            /* IMPORTANT */
+        }
+
+        /* Tablets */
+        @media (max-width: 992px) {
+            .top-logo {
+                height: 30px;
+                top: 15px;
+                right: 12px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 576px) {
+            .top-logo {
+                position: static;
+                /* remove absolute */
+                display: block;
+                margin-left: auto;
+                /* push right */
+                margin-bottom: 8px;
+                height: 28px;
+            }
+
+            .container {
+                padding-top: 10px;
+            }
+
+            h2 {
+                font-size: 18px;
+                white-space: nowrap;
+                /* force single line */
+                overflow: hidden;
+                text-overflow: ellipsis;
+                /* adds ... if too long */
+            }
+        }
+
     </style>
 </head>
 
 <body>
 
     <div class="container">
+         <img src="../images/hspl-logo.png" alt="Company Logo" class="top-logo">
         <h2>Bulk Bag Unloader - Request Form</h2>
 
         <form action="./process_form.php" method="POST" enctype="multipart/form-data">

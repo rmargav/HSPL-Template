@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lump Breaker Quotation Form</title>
-            <!-- FAVICONS ICON -->
+    <!-- FAVICONS ICON -->
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.png">
     <style>
@@ -215,12 +215,66 @@
                 /* Prevents zoom on iPhone */
             }
         }
+
+        /* top logo css */
+        .top-logo {
+            position: absolute;
+            top: 20px;
+            right: 15px;
+            height: 35px;
+            /* adjust size */
+        }
+
+        .container {
+            position: relative;
+            /* IMPORTANT */
+        }
+
+        /* Tablets */
+        @media (max-width: 992px) {
+            .top-logo {
+                height: 30px;
+                top: 15px;
+                right: 12px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 576px) {
+            .top-logo {
+                position: static;
+                /* remove absolute */
+                display: block;
+                margin-left: auto;
+                /* push right */
+                margin-bottom: 8px;
+                height: 28px;
+            }
+
+            .container {
+                padding-top: 10px;
+            }
+
+            h2 {
+                font-size: 18px;
+                white-space: nowrap;
+                /* force single line */
+                overflow: hidden;
+                text-overflow: ellipsis;
+                /* adds ... if too long */
+            }
+        }
     </style>
 </head>
 
 <body>
 
     <div class="container">
+        <img src="../images/hspl-logo.png" alt="Company Logo" class="top-logo">
         <h2>Lump Breaker (LumpMaster) - Request Form</h2>
 
         <form action="./process_form.php" method="POST" enctype="multipart/form-data">
@@ -377,143 +431,151 @@
             </fieldset>
 
             <fieldset>
-    <legend>Lumps</legend>
-    
-    <div class="form-group">
-        <label>Largest lump size:</label>
-        <input type="text" name="largest_lump_size">
-    </div>
+                <legend>Lumps</legend>
 
-    <div class="form-group">
-        <label>What is acceptable size after passing through lump breaker? (76 mm is typical)</label>
-        <input type="text" name="acceptable_size">
-    </div>
+                <div class="form-group">
+                    <label>Largest lump size:</label>
+                    <input type="text" name="largest_lump_size">
+                </div>
 
-    <div class="form-group">
-        <label>Can the lumps be broken up easily?</label>
-        <div class="checkbox-group">
-            <label><input type="checkbox" name="broken_easily" value="Yes"> Yes</label>
-            <label><input type="checkbox" name="broken_easily" value="No"> No</label>
-        </div>
-    </div>
+                <div class="form-group">
+                    <label>What is acceptable size after passing through lump breaker? (76 mm is typical)</label>
+                    <input type="text" name="acceptable_size">
+                </div>
 
-    <div class="form-group">
-        <label>Rate hardness on a scale 1-10:</label>
-        <div>
-            <input type="text" name="hardness_scale">
-            <label>1 = drop on floor, 10= it takes a hammer</label>
-        </div>
-    </div>
-</fieldset>
+                <div class="form-group">
+                    <label>Can the lumps be broken up easily?</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="broken_easily" value="Yes"> Yes</label>
+                        <label><input type="checkbox" name="broken_easily" value="No"> No</label>
+                    </div>
+                </div>
 
-<fieldset>
-    <legend>Work Envelope</legend>
-    
-    <div class="form-group">
-        <label>Required throughput:</label>
-        <div>
-            <input type="text" name="throughput_kg_min" placeholder="kg/min">  
-            <input type="text" name="throughput_kg_hr" placeholder="kg/hr"> 
-            <input type="text" name="throughput_m3_min" placeholder="m&sup3;/min"> 
-            <input type="text" name="throughput_m3_hr" placeholder="m&sup3;/hour"> 
-        </div>
-    </div>
+                <div class="form-group">
+                    <label>Rate hardness on a scale 1-10:</label>
+                    <div>
+                        <input type="text" name="hardness_scale">
+                        <label>1 = drop on floor, 10= it takes a hammer</label>
+                    </div>
+                </div>
+            </fieldset>
 
-    <div class="form-group">
-        <label>What is feeding the lump breaker?</label>
-        <input type="text" name="feeding_lump_breaker">
-    </div>
+            <fieldset>
+                <legend>Work Envelope</legend>
 
-    <div class="form-group">
-        <label>This will require inlet:</label>
-        <div class="checkbox-group">
-            <label><input type="checkbox" name="require_inlet[]" value="Hopper"> Hopper</label>
-            <label><input type="checkbox" name="require_inlet[]" value="Transition"> Transition</label>
-            <label><input type="checkbox" name="require_inlet[]" value="Flange"> Flange</label>
-            <label><input type="checkbox" name="require_inlet[]" value="None"> None</label>
-        </div>
-    </div>
+                <div class="form-group">
+                    <label>Required throughput:</label>
+                    <div>
+                        <input type="text" name="throughput_kg_min" placeholder="kg/min">
+                        <input type="text" name="throughput_kg_hr" placeholder="kg/hr">
+                        <input type="text" name="throughput_m3_min" placeholder="m&sup3;/min">
+                        <input type="text" name="throughput_m3_hr" placeholder="m&sup3;/hour">
+                    </div>
+                </div>
 
-    <div class="form-group">
-        <label>What does the lump breaker discharge into?</label>
-        <input type="text" name="lump_breaker_discharge">
-    </div>
+                <div class="form-group">
+                    <label>What is feeding the lump breaker?</label>
+                    <input type="text" name="feeding_lump_breaker">
+                </div>
 
-    <div class="form-group">
-        <label>This will require discharge:</label>
-        <div class="checkbox-group">
-            <label><input type="checkbox" name="require_inlet[]" value="Transition"> Transition</label>
-            <label><input type="checkbox" name="require_inlet[]" value="Flange"> Flange</label>
-            <label><input type="checkbox" name="require_inlet[]" value="None"> None</label>
-        </div>
-    </div>
-</fieldset>
+                <div class="form-group">
+                    <label>This will require inlet:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="require_inlet[]" value="Hopper"> Hopper</label>
+                        <label><input type="checkbox" name="require_inlet[]" value="Transition"> Transition</label>
+                        <label><input type="checkbox" name="require_inlet[]" value="Flange"> Flange</label>
+                        <label><input type="checkbox" name="require_inlet[]" value="None"> None</label>
+                    </div>
+                </div>
 
-<fieldset>
-    <legend>Construction</legend>
-    
-    <div class="form-group">
-        <label>Contact surfaces:</label>
-        <div class="checkbox-group">
-            <label><input type="checkbox" name="contact_surfaces[]" value="Carbon steel"> Carbon steel</label>
-            <label><input type="checkbox" name="contact_surfaces[]" value="#304 Stainless steel"> #304 Stainless steel</label>
-            <label><input type="checkbox" name="contact_surfaces[]" value="#316L Stainless steel"> #316L Stainless steel</label>
-        </div>
-    </div>
+                <div class="form-group">
+                    <label>What does the lump breaker discharge into?</label>
+                    <input type="text" name="lump_breaker_discharge">
+                </div>
 
-    <div class="form-group">
-        <label>Internal finish:</label>
-        <div class="checkbox-group">
-            <label><input type="checkbox" name="internal_finish[]" value="Standard"> Standard (primary mill)</label>
-            <label><input type="checkbox" name="internal_finish[]" value="Food grade"> Food grade (to 120 grit)</label>
-        </div>
-    </div>
-</fieldset>
+                <div class="form-group">
+                    <label>This will require discharge:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="require_inlet[]" value="Transition"> Transition</label>
+                        <label><input type="checkbox" name="require_inlet[]" value="Flange"> Flange</label>
+                        <label><input type="checkbox" name="require_inlet[]" value="None"> None</label>
+                    </div>
+                </div>
+            </fieldset>
 
-<fieldset>
-    <legend>Electrical</legend>
-    
-    <div class="form-group">
-        <label>Motor specifications:</label>
-        <div>
-            <input type="text" name="motor_volt"> Volt/3 Phase/
-            <input type="text" name="motor_hertz"> Hertz
-        </div>
-    </div>
+            <fieldset>
+                <legend>Construction</legend>
 
-    <div class="form-group">
-        <div class="checkbox-group">
-            <label><input type="checkbox" name="motor_enclosure[]" value="TEFC"> TEFC</label>
-            <label><input type="checkbox" name="motor_enclosure[]" value="Washdown Duty"> Washdown Duty</label>
-        </div>
-    </div>
+                <div class="form-group">
+                    <label>Contact surfaces:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="contact_surfaces[]" value="Carbon steel"> Carbon
+                            steel</label>
+                        <label><input type="checkbox" name="contact_surfaces[]" value="#304 Stainless steel"> #304
+                            Stainless steel</label>
+                        <label><input type="checkbox" name="contact_surfaces[]" value="#316L Stainless steel"> #316L
+                            Stainless steel</label>
+                    </div>
+                </div>
 
-    <div class="row">
-        <div class="col form-group">
-            <label><input type="checkbox" name="motor_enclosure[]" value="Explosion Proof"> Explosion Proof</label>
-        </div>
-        <div class="col form-group">
-            <label>Class:</label>
-            <input type="text" name="explosion_class">
-        </div>
-        <div class="col form-group">
-            <label>Group:</label>
-            <input type="text" name="explosion_group">
-        </div>
-        <div class="col form-group">
-            <label>Division:</label>
-            <input type="text" name="explosion_division">
-        </div>
-    </div>
+                <div class="form-group">
+                    <label>Internal finish:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="internal_finish[]" value="Standard"> Standard (primary
+                            mill)</label>
+                        <label><input type="checkbox" name="internal_finish[]" value="Food grade"> Food grade (to 120
+                            grit)</label>
+                    </div>
+                </div>
+            </fieldset>
 
-    <div class="form-group">
-        <label>Controls:</label>
-        <div class="checkbox-group">
-            <label><input type="checkbox" name="controls_status" value="Required"> Required, NEMA: <input type="text" name="controls_nema"></label>
-            <label><input type="checkbox" name="controls_status" value="Not required"> Not required</label>
-        </div>
-    </div>
-</fieldset>
+            <fieldset>
+                <legend>Electrical</legend>
+
+                <div class="form-group">
+                    <label>Motor specifications:</label>
+                    <div>
+                        <input type="text" name="motor_volt"> Volt/3 Phase/
+                        <input type="text" name="motor_hertz"> Hertz
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="motor_enclosure[]" value="TEFC"> TEFC</label>
+                        <label><input type="checkbox" name="motor_enclosure[]" value="Washdown Duty"> Washdown
+                            Duty</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col form-group">
+                        <label><input type="checkbox" name="motor_enclosure[]" value="Explosion Proof"> Explosion
+                            Proof</label>
+                    </div>
+                    <div class="col form-group">
+                        <label>Class:</label>
+                        <input type="text" name="explosion_class">
+                    </div>
+                    <div class="col form-group">
+                        <label>Group:</label>
+                        <input type="text" name="explosion_group">
+                    </div>
+                    <div class="col form-group">
+                        <label>Division:</label>
+                        <input type="text" name="explosion_division">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Controls:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="controls_status" value="Required"> Required, NEMA: <input
+                                type="text" name="controls_nema"></label>
+                        <label><input type="checkbox" name="controls_status" value="Not required"> Not required</label>
+                    </div>
+                </div>
+            </fieldset>
 
             <fieldset>
 
@@ -521,8 +583,7 @@
                     <legend>Additional Requirements</legend>
                     <div class="form-group">
                         <label>Describe Your Process:</label>
-                        <textarea name="process_description" rows="5"
-                            placeholder=""></textarea>
+                        <textarea name="process_description" rows="5" placeholder=""></textarea>
                     </div>
 
                     <div class="form-group" style="margin-top: 25px;">

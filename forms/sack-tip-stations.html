@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bag Dump Station Quotation Form</title>
-            <!-- FAVICONS ICON -->
+    <title>Sack Tip Station Quotation Form</title>
+    <!-- FAVICONS ICON -->
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.png">
     <style>
@@ -215,16 +215,70 @@
                 /* Prevents zoom on iPhone */
             }
         }
+
+        /* top logo css */
+        .top-logo {
+            position: absolute;
+            top: 20px;
+            right: 15px;
+            height: 35px;
+            /* adjust size */
+        }
+
+        .container {
+            position: relative;
+            /* IMPORTANT */
+        }
+
+        /* Tablets */
+        @media (max-width: 992px) {
+            .top-logo {
+                height: 30px;
+                top: 15px;
+                right: 12px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 576px) {
+            .top-logo {
+                position: static;
+                /* remove absolute */
+                display: block;
+                margin-left: auto;
+                /* push right */
+                margin-bottom: 8px;
+                height: 28px;
+            }
+
+            .container {
+                padding-top: 10px;
+            }
+
+            h2 {
+                font-size: 18px;
+                white-space: nowrap;
+                /* force single line */
+                overflow: hidden;
+                text-overflow: ellipsis;
+                /* adds ... if too long */
+            }
+        }
     </style>
 </head>
 
 <body>
 
     <div class="container">
-        <h2>Bag Dump Station - Request Form</h2>
+        <img src="../images/hspl-logo.png" alt="Company Logo" class="top-logo">
+        <h2>Sack Tip Station - Request Form</h2>
 
         <form action="./process_form.php" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="product_type" value="Bag Dump Station">
+            <input type="hidden" name="product_type" value="Sack Tip Station">
 
             <fieldset>
                 <legend>General Information</legend>
