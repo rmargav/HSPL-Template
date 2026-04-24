@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pneumatic Conveyor Form</title>
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.png">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ===== NEW 50/50 HEADER CSS ===== */
+        .form-header {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .header-logo {
+            flex: 0 0 50%; /* Takes exactly 50% of the block */
+            text-align: left;
+        }
+
+        .header-logo img {
+            height: 50px;
+            object-fit: contain;
+        }
+
+        .header-address {
+            flex: 0 0 50%; /* Takes exactly 50% of the block */
+            text-align: right;
+        }
+
+        .header-address .wt-tilte {
+            margin: 0 0 5px 0;
+            font-size: 16px;
+            color: #000;
+        }
+
+        .header-address p {
+            margin: 0;
+            font-size: 13px;
+            color: #222;
+            line-height: 1.4;
+        }
+
+        h2 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 25px;
+            background-color: #fafafa;
+        }
+
+        legend {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .col {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="number"],
+        select,
+        textarea {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .checkbox-group,
+        .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .checkbox-group label,
+        .radio-group label {
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: #218838;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            color: #444;
+            text-decoration: underline;
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px 20px;
+        }
+
+        .checkbox-group label {
+            display: block;
+        }
+        
+        table.env-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+            background-color: #fff;
+        }
+
+        table.env-table th, table.env-table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+
+        table.env-table th {
+            background-color: #f2f2f2;
+            font-size: 14px;
+        }
+
+        table.env-table td label {
+            font-weight: normal;
+            margin: 0;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* ===== Responsive Fix ===== */
+        @media (max-width: 992px) {
+            .checkbox-group {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            h2 {
+                font-size: 22px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            body { padding: 10px; }
+            .container { padding: 15px; padding-top: 15px; }
+            
+            /* Mobile par header aage-peeche (stack) ho jayega taaki address na toote */
+            .form-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .header-logo, .header-address {
+                flex: none;
+                width: 100%;
+                text-align: start;
+            }
+            .header-logo img {
+                margin-bottom: 10px;
+                margin-left: 100px;
+            }
+
+            .row { flex-direction: column; gap: 10px; }
+            .col { min-width: 100%; }
+            .checkbox-group { grid-template-columns: 1fr; }
+            .checkbox-group label {
+                display: flex;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            input[type="text"], input[type="email"], input[type="date"], input[type="number"], select, textarea {
+                font-size: 16px;
+            }
+            h2 {
+                font-size: 18px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            table.env-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        
+        <div class="form-header">
+            <div class="header-logo">
+                <img src="../images/hspl-logo.png" alt="Company Logo">
+            </div>
+            <div class="icon-content header-address">
+                <h3 class="wt-tilte">Address</h3>
+                <p>D-24 Sardar Estate, Ajwa Road, Vadodara, Gujarat, India</p>
+            </div>
+        </div>
+
+        <h2>Pneumatic Conveyor - Request Form</h2>
+
+        <form action="./process_form.php" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="product_type" value="Pneumatic Conveyor">
+
+            <fieldset>
+                <legend>General Information</legend>
+                <div class="row">
+                    <div class="col form-group"><label>Date:</label><input type="date" name="date" required></div>
+                    <div class="col form-group"><label>Company:</label><input type="text" name="company" required></div>
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;"><label>Address:</label><input type="text" name="address"></div>
+                <div class="row">
+                    <div class="col form-group"><label>City:</label><input type="text" name="city"></div>
+                    <div class="col form-group"><label>State:</label><input type="text" name="state"></div>
+                    <div class="col form-group"><label>Zip:</label><input type="text" name="zip"></div>
+                </div>
+
+                <div class="section-title">Contact 1</div>
+                <div class="row">
+                    <div class="col form-group"><label>Name:</label><input type="text" name="contact1_name" required></div>
+                    <div class="col form-group"><label>Phone:</label><input type="text" name="contact1_phone" required></div>
+                    <div class="col form-group"><label>Fax:</label><input type="text" name="contact1_fax"></div>
+                    <div class="col form-group"><label>Email:</label><input type="email" name="contact1_email" required></div>
+                </div>
+
+                <div class="section-title">Contact 2</div>
+                <div class="row">
+                    <div class="col form-group"><label>Name:</label><input type="text" name="contact2_name"></div>
+                    <div class="col form-group"><label>Phone:</label><input type="text" name="contact2_phone"></div>
+                    <div class="col form-group"><label>Fax:</label><input type="text" name="contact2_fax"></div>
+                    <div class="col form-group"><label>Email:</label><input type="email" name="contact2_email"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col form-group"><label>Location of Installation:</label><input type="text" name="installation_location"></div>
+                    <div class="col form-group"><label>Quotation Deadline:</label><input type="date" name="quotation_deadline"></div>
+                    <div class="col form-group"><label>Installation Target Date:</label><input type="date" name="installation_target_date"></div>
+                </div>
+
+                <div class="section-title">Project Status</div>
+                <div class="radio-group">
+                    <label><input type="radio" name="project_status" value="Budgetary"> Budgetary</label>
+                    <label><input type="radio" name="project_status" value="Funded"> Funded</label>
+                    <label><input type="radio" name="project_status" value="Approved for purchase"> Approved for purchase</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Material</legend>
+                <div class="row">
+                    <div class="col form-group"><label>Common Name:</label><input type="text" name="material_common_name"></div>
+                    <div class="col form-group"><label>Trade Name:</label><input type="text" name="material_trade_name"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col form-group">
+                        <label>Bulk Density</label>
+                        <div style="display:flex; gap: 10px; align-items:center;">
+                            <input type="text" name="bulk_density" style="flex:1;">
+                            <label><input type="radio" name="density_unit" value="g/cc"> g/cc</label>
+                            <label><input type="radio" name="density_unit" value="kg/m³"> kg/m³</label>
+                        </div>
+                    </div>
+                    <div class="col form-group"><label>Particle Size:</label><input type="text" name="particle_size"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col form-group"><label>Temperature:</label><input type="text" name="temperature"></div>
+                    <div class="col form-group"><label>Moisture Content:</label><input type="text" name="moisture_content"></div>
+                </div>
+
+                <div class="section-title">Composition</div>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="composition[]" value="Powder"> Powder</label>
+                    <label><input type="checkbox" name="composition[]" value="Granule"> Granule</label>
+                    <label><input type="checkbox" name="composition[]" value="Fiber"> Fiber</label>
+                    <label><input type="checkbox" name="composition[]" value="Prill"> Prill</label>
+                    <label><input type="checkbox" name="composition[]" value="Pellet"> Pellet</label>
+                    <label><input type="checkbox" name="composition[]" value="Flake"> Flake</label>
+                    <label style="display: flex; align-items: center; gap: 5px;">
+                        <input type="checkbox" name="composition[]" value="Other"> Other: 
+                        <input type="text" name="composition_other_text" style="width: auto;">
+                    </label>
+                </div>
+
+                <div class="section-title">Characteristics (Check all that apply)</div>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="characteristics[]" value="Corrosive"> Corrosive</label>
+                    <label><input type="checkbox" name="characteristics[]" value="Agglomerates"> Agglomerates</label>
+                    <label><input type="checkbox" name="characteristics[]" value="Segregates"> Segregates</label>
+                    <label><input type="checkbox" name="characteristics[]" value="Aerates"> Aerates</label>
+                    <label><input type="checkbox" name="characteristics[]" value="Explosive"> Explosive</label>
+                    <label><input type="checkbox" name="characteristics[]" value="Hygroscopic"> Hygroscopic</label>
+                    <label><input type="checkbox" name="characteristics[]" value="Adhesive"> Adhesive</label>
+                    <label><input type="checkbox" name="characteristics[]" value="Degrades"> Degrades</label>
+                    <label><input type="checkbox" name="characteristics[]" value="Packs or smears"> Packs or smears</label>
+                    <label><input type="checkbox" name="characteristics[]" value="Friable"> Friable</label>
+                    <label><input type="checkbox" name="characteristics[]" value="Cohesive"> Cohesive</label>
+                    <label><input type="checkbox" name="characteristics[]" value="Toxic"> Toxic</label>
+                </div>
+
+                <div class="section-title">Abrasiveness</div>
+                <div class="radio-group">
+                    <label><input type="radio" name="abrasiveness" value="Non-abrasive"> Non-abrasive</label>
+                    <label><input type="radio" name="abrasiveness" value="Mildly abrasive"> Mildly abrasive</label>
+                    <label><input type="radio" name="abrasiveness" value="Highly abrasive"> Highly abrasive</label>
+                </div>
+
+                <div class="section-title">Flowability</div>
+                <div class="radio-group">
+                    <label><input type="radio" name="flowability" value="Very free flowing (repose < 30°)"> Very free flowing (repose &lt; 30&deg;)</label>
+                    <label><input type="radio" name="flowability" value="Free flowing (repose 30° to 45°)"> Free flowing (repose 30&deg; to 45&deg;)</label>
+                    <label><input type="radio" name="flowability" value="Sluggish (Repose > 45°)"> Sluggish (Repose &gt; 45&deg;)</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Work Envelope</legend>
+                <div class="section-title">Environment (Check all that apply)</div>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="work_env[]" value="Dirty"> Dirty</label>
+                    <label><input type="checkbox" name="work_env[]" value="Temperature"> Temperature</label>
+                    <label><input type="checkbox" name="work_env[]" value="Corrosive"> Corrosive</label>
+                    <label><input type="checkbox" name="work_env[]" value="Humid"> Humid</label>
+                    <label><input type="checkbox" name="work_env[]" value="Explosive"> Explosive</label>
+                </div>
+                
+                <div class="row" style="margin-top: 15px;">
+                    <div class="col form-group">
+                        <label>Elevation above or below sea level is (meters):</label>
+                        <input type="number" name="elevation_meters">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col form-group">
+                        <label>Total Conveying Distance (Vertical):</label>
+                        <div style="display:flex; align-items:center; gap: 5px;">
+                            <input type="text" name="distance_vertical"> meters
+                        </div>
+                    </div>
+                    <div class="col form-group">
+                        <label>Total Conveying Distance (Horizontal):</label>
+                        <div style="display:flex; align-items:center; gap: 5px;">
+                            <input type="text" name="distance_horizontal"> meters
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col form-group">
+                        <label>Number of bends (Try to keep it under 4):</label>
+                        <input type="number" name="number_of_bends">
+                    </div>
+                    <div class="col form-group">
+                        <label>Conveyor discharges into:</label>
+                        <input type="text" name="discharges_into">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Convey Rate & Operating Requirements</legend>
+                <div class="row">
+                    <div class="col form-group">
+                        <label>Duty cycle (hours per day):</label>
+                        <input type="number" name="duty_hours_per_day">
+                    </div>
+                    <div class="col form-group">
+                        <label>Duty cycle (days per week):</label>
+                        <input type="number" name="duty_days_per_week">
+                    </div>
+                </div>
+
+                <div class="section-title">Mode</div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label style="display: flex; align-items: center; gap: 10px; font-weight: normal;">
+                        <input type="checkbox" name="mode_continuous"> Continuous/Non-stop delivery at
+                        <input type="number" name="continuous_rate" style="width: 150px;"> kg per hour
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label style="display: flex; align-items: center; gap: 10px; font-weight: normal;">
+                        <input type="checkbox" name="mode_intermittent"> Intermittent / Batch
+                    </label>
+                </div>
+
+                <div class="row" style="margin-left: 25px;">
+                    <div class="col form-group">
+                        <label>Batch amount:</label>
+                        <input type="text" name="batch_amount">
+                    </div>
+                    <div class="col form-group">
+                        <label>Time to deliver batch:</label>
+                        <input type="text" name="time_to_deliver_batch">
+                    </div>
+                </div>
+                <div class="row" style="margin-left: 25px;">
+                    <div class="col form-group">
+                        <label>Idle time between batches:</label>
+                        <input type="text" name="idle_time_between_batches">
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top: 15px;">
+                    <div class="col form-group">
+                        <label>Conveyor is being fed by:</label>
+                        <input type="text" name="conveyor_fed_by">
+                    </div>
+                    <div class="col form-group">
+                        <label>Conveyor is feeding:</label>
+                        <input type="text" name="conveyor_feeding">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Power and Controls</legend>
+                
+                <div class="section-title">Conveyor location & Environment (Place X in boxes)</div>
+                <table class="env-table">
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th>Indoor</th>
+                            <th>Outdoor</th>
+                            <th>Washdown</th>
+                            <th>Explosion Proof Area (list Class, Group & Div)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Intake</strong></td>
+                            <td><label><input type="checkbox" name="intake_env[]" value="Indoor"></label></td>
+                            <td><label><input type="checkbox" name="intake_env[]" value="Outdoor"></label></td>
+                            <td><label><input type="checkbox" name="intake_env[]" value="Washdown"></label></td>
+                            <td><input type="text" name="intake_exp_proof" style="width:90%"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Receiver</strong></td>
+                            <td><label><input type="checkbox" name="receiver_env[]" value="Indoor"></label></td>
+                            <td><label><input type="checkbox" name="receiver_env[]" value="Outdoor"></label></td>
+                            <td><label><input type="checkbox" name="receiver_env[]" value="Washdown"></label></td>
+                            <td><input type="text" name="receiver_exp_proof" style="width:90%"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Blower</strong></td>
+                            <td><label><input type="checkbox" name="blower_env[]" value="Indoor"></label></td>
+                            <td><label><input type="checkbox" name="blower_env[]" value="Outdoor"></label></td>
+                            <td><label><input type="checkbox" name="blower_env[]" value="Washdown"></label></td>
+                            <td><input type="text" name="blower_exp_proof" style="width:90%"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Controls</strong></td>
+                            <td><label><input type="checkbox" name="controls_env[]" value="Indoor"></label></td>
+                            <td><label><input type="checkbox" name="controls_env[]" value="Outdoor"></label></td>
+                            <td><label><input type="checkbox" name="controls_env[]" value="Washdown"></label></td>
+                            <td><input type="text" name="controls_exp_proof" style="width:90%"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="form-group" style="margin-top:15px;">
+                    <label>Controls:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="control_panel[]" value="NEMA 4"> NEMA 4</label>
+                        <label><input type="checkbox" name="control_panel[]" value="NEMA 4X"> NEMA 4X</label>
+                        <label><input type="checkbox" name="control_panel[]" value="Add Starters"> Add Starters</label>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top:15px;">
+                    <div class="col form-group">
+                        <label>Plant Service:</label>
+                        <div style="display:flex; gap:10px;">
+                            <input type="text" name="plant_volts" placeholder="Volts">
+                            <input type="text" name="plant_phase" placeholder="Phase">
+                            <input type="text" name="plant_hertz" placeholder="Hertz">
+                        </div>
+                    </div>
+                    <div class="col form-group">
+                        <label>Available air:</label>
+                        <input type="text" name="available_air">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Construction</legend>
+
+                <div class="section-title">Internal Finish</div>
+                <div class="radio-group" style="margin-bottom: 15px;">
+                    <label><input type="radio" name="internal_finish" value="Standard (primary mill finish)"> Standard (primary mill finish)</label>
+                    <label><input type="radio" name="internal_finish" value="Food grade (2B mill finish)"> Food grade (2B mill finish)</label>
+                    <label><input type="radio" name="internal_finish" value="Sanitary (150 grit finish)"> Sanitary (150 grit finish)</label>
+                </div>
+
+                <div class="row">
+                    <div class="col form-group">
+                        <label>Contact Surfaces Materials:</label>
+                        <div class="radio-group" style="flex-direction: column; gap: 5px;">
+                            <label><input type="radio" name="contact_surfaces" value="Carbon steel"> Carbon steel</label>
+                            <label><input type="radio" name="contact_surfaces" value="#304 Stainless steel"> #304 Stainless steel</label>
+                            <label><input type="radio" name="contact_surfaces" value="#304L Stainless steel"> #304L Stainless steel</label>
+                            <label><input type="radio" name="contact_surfaces" value="#316 Stainless steel"> #316 Stainless steel</label>
+                            <label><input type="radio" name="contact_surfaces" value="#316L Stainless steel"> #316L Stainless steel</label>
+                        </div>
+                    </div>
+                    <div class="col form-group">
+                        <label>Non-Contact Surfaces Materials:</label>
+                        <div class="radio-group" style="flex-direction: column; gap: 5px;">
+                            <label><input type="radio" name="non_contact_surfaces" value="Carbon steel"> Carbon steel</label>
+                            <label><input type="radio" name="non_contact_surfaces" value="#304 Stainless steel"> #304 Stainless steel</label>
+                            <label><input type="radio" name="non_contact_surfaces" value="#304L Stainless steel"> #304L Stainless steel</label>
+                            <label><input type="radio" name="non_contact_surfaces" value="#316 Stainless steel"> #316 Stainless steel</label>
+                            <label><input type="radio" name="non_contact_surfaces" value="#316L Stainless steel"> #316L Stainless steel</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-title" style="margin-top: 15px;">Exterior Paint (carbon steel only)</div>
+                <div class="checkbox-group">
+                    <label><input type="radio" name="exterior_paint" value="Blue Enamel"> Blue Enamel</label>
+                    <label><input type="radio" name="exterior_paint" value="White Enamel"> White Enamel</label>
+                    <label style="display: flex; align-items: center; gap: 5px;">
+                        <input type="radio" name="exterior_paint" value="Epoxy"> Epoxy (specify color): 
+                        <input type="text" name="exterior_paint_epoxy_color" style="width: auto;">
+                    </label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Additional Requirements</legend>
+                <div class="form-group">
+                    <label>Describe Your Process:</label>
+                    <textarea name="process_description" rows="5" placeholder=""></textarea>
+                </div>
+
+                <div class="form-group" style="margin-top: 25px;">
+                    <label>Upload Installation Sketch / Clearances (Plan/Side Elevation):</label>
+                    <input type="file" name="installation_sketch" accept=".jpg,.png,.pdf,.doc,.docx">
+                    <small style="color: #666;">Indicate preferred conveyor path with all possible alternatives. Indicate clearances and obstructions so we can select the most practical solution.</small>
+                </div>
+            </fieldset>
+
+            <button type="submit" class="btn-submit">Submit Quotation Request</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

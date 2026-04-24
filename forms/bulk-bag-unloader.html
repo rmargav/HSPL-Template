@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bulk Bag Unloader</title>
-            <!-- FAVICONS ICON -->
+    <!-- FAVICONS ICON -->
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.png">
     <style>
@@ -216,18 +216,43 @@
             }
         }
 
-        /* top logo css */
-        .top-logo {
-            position: absolute;
-            top: 20px;
-            right: 15px;
-            height: 35px;
-            /* adjust size */
+        /* ===== NEW 50/50 HEADER CSS ===== */
+        .form-header {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eaeaea;
         }
 
-        .container {
-            position: relative;
-            /* IMPORTANT */
+        .header-logo {
+            flex: 0 0 50%;
+            /* Takes exactly 50% of the block */
+            text-align: left;
+        }
+
+        .header-logo img {
+            height: 50px;
+            object-fit: contain;
+        }
+
+        .header-address {
+            flex: 0 0 50%;
+            /* Takes exactly 50% of the block */
+            text-align: right;
+        }
+
+        .header-address .wt-tilte {
+            margin: 0 0 5px 0;
+            font-size: 16px;
+            color: #000;
+        }
+
+        .header-address p {
+            margin: 0;
+            font-size: 13px;
+            color: #222;
+            line-height: 1.4;
         }
 
         /* Tablets */
@@ -267,15 +292,41 @@
                 text-overflow: ellipsis;
                 /* adds ... if too long */
             }
-        }
 
+            /* Mobile Header Fix */
+            .form-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .header-logo,
+            .header-address {
+                flex: none;
+                width: 100%;
+                text-align: start;
+            }
+
+            .header-logo img {
+                margin-bottom: 10px;
+                margin-left: 100px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
     <div class="container">
-         <img src="../images/hspl-logo.png" alt="Company Logo" class="top-logo">
+        <div class="form-header">
+            <div class="header-logo">
+                <img src="../images/hspl-logo.png" alt="Company Logo">
+            </div>
+            <div class="icon-content header-address">
+                <h3 class="wt-tilte">Address</h3>
+                <p>D-24 Sardar Estate, Ajwa Road, Vadodara, Gujarat, India</p>
+            </div>
+        </div>
         <h2>Bulk Bag Unloader - Request Form</h2>
 
         <form action="./process_form.php" method="POST" enctype="multipart/form-data">
@@ -421,8 +472,8 @@
                             </table>
                         </div>
                         <div class="col sketch-container">
-                            <img src="./images/bulk-bag-unloader-sketch.png"
-                                alt="Bulk Bag Diagram (A-F)" class="sketch-image" style="width: 60%;">
+                            <img src="./images/bulk-bag-unloader-sketch.png" alt="Bulk Bag Diagram (A-F)"
+                                class="sketch-image" style="width: 60%;">
                         </div>
                     </div>
                 </div>
@@ -527,114 +578,129 @@
                     </div>
                 </div>
             </fieldset>
-            
+
             <fieldset>
-    <legend>Environment</legend>
-    <div class="form-group">
-        <label>Atmospheric conditions (check all that apply)</label>
-        <div class="checkbox-group">
-            <label><input type="checkbox" name="atmospheric[]" value="Outdoor"> Outdoor</label>
-            <label><input type="checkbox" name="atmospheric[]" value="Corrosive"> Corrosive</label>
-            <label><input type="checkbox" name="atmospheric[]" value="Explosive"> Explosive</label>
-            <label><input type="checkbox" name="atmospheric[]" value="High humidity"> High humidity</label>
-            <label><input type="checkbox" name="atmospheric[]" value="High temperature"> High temperature</label>
-            <label><input type="checkbox" name="atmospheric[]" value="Dirty"> Dirty</label>
-        </div>
-    </div>
-</fieldset>
+                <legend>Environment</legend>
+                <div class="form-group">
+                    <label>Atmospheric conditions (check all that apply)</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="atmospheric[]" value="Outdoor"> Outdoor</label>
+                        <label><input type="checkbox" name="atmospheric[]" value="Corrosive"> Corrosive</label>
+                        <label><input type="checkbox" name="atmospheric[]" value="Explosive"> Explosive</label>
+                        <label><input type="checkbox" name="atmospheric[]" value="High humidity"> High humidity</label>
+                        <label><input type="checkbox" name="atmospheric[]" value="High temperature"> High
+                            temperature</label>
+                        <label><input type="checkbox" name="atmospheric[]" value="Dirty"> Dirty</label>
+                    </div>
+                </div>
+            </fieldset>
 
-<fieldset>
-    <legend>Operating Requirements</legend>
-    <div class="row">
-        <div class="col form-group">
-            <label>Duty cycle:</label>
+            <fieldset>
+                <legend>Operating Requirements</legend>
                 <div class="row">
-                    <div class="col form-group"><label></label><input type="number"
-                            name="duty_hours_per_day"  placeholder="Hours per day"></div>
-                    <div class="col form-group"><label></label><input type="number"
-                            name="duty_days_per_week" placeholder="Days per week"></div>
+                    <div class="col form-group">
+                        <label>Duty cycle:</label>
+                        <div class="row">
+                            <div class="col form-group"><label></label><input type="number" name="duty_hours_per_day"
+                                    placeholder="Hours per day"></div>
+                            <div class="col form-group"><label></label><input type="number" name="duty_days_per_week"
+                                    placeholder="Days per week"></div>
+                        </div>
+                    </div>
                 </div>
-        </div>
-    </div>
 
-    <div class="form-group">
-        <label>Mode:</label>
-        <div style="margin-bottom: 10px;">
-            <label><input type="checkbox" name="mode_continuous"> Continuous / Non-stop delivery at</label>
-            <input type="text" name="continuous_kg_per_hour" placeholder="kg per hour"> 
-        </div>
-        
-        <div>
-            <label><input type="checkbox" name="mode_intermittent"> Intermittent / Batch</label>
-            <div class="row" style="margin-top: 10px;">
-                <div class="col form-group">
-                    <label>Batch amount:</label>
-                    <input type="text" name="batch_amount">
+                <div class="form-group">
+                    <label>Mode:</label>
+                    <div style="margin-bottom: 10px;">
+                        <label><input type="checkbox" name="mode_continuous"> Continuous / Non-stop delivery at</label>
+                        <input type="text" name="continuous_kg_per_hour" placeholder="kg per hour">
+                    </div>
+
+                    <div>
+                        <label><input type="checkbox" name="mode_intermittent"> Intermittent / Batch</label>
+                        <div class="row" style="margin-top: 10px;">
+                            <div class="col form-group">
+                                <label>Batch amount:</label>
+                                <input type="text" name="batch_amount">
+                            </div>
+                            <div class="col form-group">
+                                <label>Time to deliver batch:</label>
+                                <input type="text" name="time_to_deliver_batch">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Idle time between batches:</label>
+                            <input type="text" name="idle_time_between_batches">
+                        </div>
+                    </div>
                 </div>
-                <div class="col form-group">
-                    <label>Time to deliver batch:</label>
-                    <input type="text" name="time_to_deliver_batch">
+
+                <div class="form-group">
+                    <label>Dust containment:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="dust_containment" value="Internal required"> Internal
+                            required</label>
+                        <label><input type="checkbox" name="dust_containment" value="External collection available">
+                            External collection available</label>
+                        <label><input type="checkbox" name="dust_containment" value="None"> None</label>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label>Idle time between batches:</label>
-                <input type="text" name="idle_time_between_batches">
-            </div>
-        </div>
-    </div>
+            </fieldset>
 
-    <div class="form-group">
-        <label>Dust containment:</label>
-        <div class="checkbox-group">
-            <label><input type="checkbox" name="dust_containment" value="Internal required"> Internal required</label>
-            <label><input type="checkbox" name="dust_containment" value="External collection available"> External collection available</label>
-            <label><input type="checkbox" name="dust_containment" value="None"> None</label>
-        </div>
-    </div>
-</fieldset>
+            <fieldset>
+                <legend>Construction</legend>
+                <div class="row">
+                    <div class="col form-group">
+                        <label>Frame:</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="frame[]" value="Carbon Steel"> Carbon Steel</label>
+                            <label><input type="checkbox" name="frame[]" value="#304 Stainless Steel"> #304 Stainless
+                                Steel</label>
+                            <label><input type="checkbox" name="frame[]" value="Finish"> Finish: <input type="text"
+                                    name="frame_finish"></label>
+                        </div>
+                    </div>
+                </div>
 
-<fieldset>
-    <legend>Construction</legend>
-    <div class="row">
-        <div class="col form-group">
-            <label>Frame:</label>
-            <div class="checkbox-group">
-                <label><input type="checkbox" name="frame[]" value="Carbon Steel"> Carbon Steel</label>
-                <label><input type="checkbox" name="frame[]" value="#304 Stainless Steel"> #304 Stainless Steel</label>
-                <label><input type="checkbox" name="frame[]" value="Finish"> Finish: <input type="text" name="frame_finish"></label>
-            </div>
-        </div>
-    </div>
+                <div class="row">
+                    <div class="col form-group">
+                        <label>Material contact:</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="material_contact[]" value="Carbon Steel"> Carbon
+                                Steel</label>
+                            <label><input type="checkbox" name="material_contact[]" value="#304 Stainless Steel"> #304
+                                Stainless Steel</label>
+                            <label><input type="checkbox" name="material_contact[]" value="Finish"> Finish: <input
+                                    type="text" name="material_contact_finish"></label>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="row">
-        <div class="col form-group">
-            <label>Material contact:</label>
-            <div class="checkbox-group">
-                <label><input type="checkbox" name="material_contact[]" value="Carbon Steel"> Carbon Steel</label>
-                <label><input type="checkbox" name="material_contact[]" value="#304 Stainless Steel"> #304 Stainless Steel</label>
-                <label><input type="checkbox" name="material_contact[]" value="Finish"> Finish: <input type="text" name="material_contact_finish"></label>
-            </div>
-        </div>
-    </div>
+                <div class="form-group">
+                    <label>Bag suspension method:</label>
+                    <div style="margin-left: 20px;">
+                        <label style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;"><input
+                                type="checkbox" name="bag_suspension[]" value="Forklift transport frame"> Forklift
+                            transport frame</label>
+                        <label style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;"><input
+                                type="checkbox" name="bag_suspension[]" value="Hoist and Trolley"> Hoist and
+                            Trolley</label>
 
-    <div class="form-group">
-        <label>Bag suspension method:</label>
-        <div style="margin-left: 20px;">
-            <label style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;"><input type="checkbox" name="bag_suspension[]" value="Forklift transport frame"> Forklift transport frame</label>
-            <label style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;"><input type="checkbox" name="bag_suspension[]" value="Hoist and Trolley"> Hoist and Trolley</label>
-            
-            <div style="margin-left: 30px;">
-                <label style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;"><input type="checkbox" name="hoist_type[]" value="Electric hoist"> Electric hoist</label>
-                <label style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;"><input type="checkbox" name="hoist_type[]" value="Air hoist"> Air hoist</label>
-            </div>
-            
-            <label style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;"><input type="checkbox" name="bag_suspension[]" value="Half-Frame"> Half-Frame</label>
-        </div>
-    </div>
-</fieldset>
+                        <div style="margin-left: 30px;">
+                            <label style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;"><input
+                                    type="checkbox" name="hoist_type[]" value="Electric hoist"> Electric hoist</label>
+                            <label style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;"><input
+                                    type="checkbox" name="hoist_type[]" value="Air hoist"> Air hoist</label>
+                        </div>
 
-<fieldset>
-    <legend>Available Utilities</legend>
+                        <label style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;"><input
+                                type="checkbox" name="bag_suspension[]" value="Half-Frame"> Half-Frame</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Available Utilities</legend>
                 <div class="row">
                     <div class="col form-group">
                         <label>Power (Volt / 3 Phase):</label>
@@ -646,7 +712,7 @@
                     </div>
                 </div>
 
-                   <div class="row">
+                <div class="row">
                     <div class="col form-group">
                         <label>Air (CFM):</label>
                         <input type="text" name="air_cfm">
@@ -657,22 +723,23 @@
                     </div>
                 </div>
 
-    <div class="form-group">
-        <label>Environment:</label>
-        <div class="checkbox-group">
-            <label><input type="checkbox" name="utilities_env[]" value="4"> 4</label>
-            <label><input type="checkbox" name="utilities_env[]" value="4X"> 4X</label>
-            <label><input type="checkbox" name="utilities_env[]" value="Explosion Proof"> Explosion Proof -List Class, Group & Division: <input type="text" name="utilities_explosion_proof_details"></label>
-        </div>
-    </div>
-</fieldset>
+                <div class="form-group">
+                    <label>Environment:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="utilities_env[]" value="4"> 4</label>
+                        <label><input type="checkbox" name="utilities_env[]" value="4X"> 4X</label>
+                        <label><input type="checkbox" name="utilities_env[]" value="Explosion Proof"> Explosion Proof
+                            -List Class, Group & Division: <input type="text"
+                                name="utilities_explosion_proof_details"></label>
+                    </div>
+                </div>
+            </fieldset>
 
             <fieldset>
                 <legend>Additional Requirements</legend>
                 <div class="form-group">
                     <label>Describe Your Process:</label>
-                    <textarea name="process_description" rows="5"
-                        placeholder=""></textarea>
+                    <textarea name="process_description" rows="5" placeholder=""></textarea>
                 </div>
 
                 <div class="form-group" style="margin-top: 25px;">
