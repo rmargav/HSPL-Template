@@ -66,6 +66,17 @@
             line-height: 1.4;
         }
 
+        .header-address a {
+            font-size: 14px;
+            color: #666;
+            text-decoration: none;
+        }
+
+        .header-address a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
         h2 {
             text-align: center;
             color: #0056b3;
@@ -213,11 +224,13 @@
             .checkbox-group {
                 grid-template-columns: repeat(2, 1fr);
             }
+
             .top-logo {
                 height: 30px;
                 top: 15px;
                 right: 12px;
             }
+
             h2 {
                 font-size: 22px;
             }
@@ -313,7 +326,9 @@
                 <img src="../images/hspl-logo.png" alt="Company Logo">
             </div>
             <div class="icon-content header-address">
-                <h3 class="wt-tilte">Address</h3>
+                <h3 class="wt-tilte">
+                    Email: <a href="mailto:info@hspl.in.net" class="email-link">info@hspl.in.net</a>
+                </h3>
                 <p>D-24 Sardar Estate, Ajwa Road, Vadodara, Gujarat, India</p>
             </div>
         </div>
@@ -386,7 +401,8 @@
                         <label><input type="checkbox" name="empty_method[]" value="Vibrated"> Vibrated</label>
                         <label><input type="checkbox" name="empty_method[]" value="Massaged"> Massaged</label>
                         <label><input type="checkbox" name="empty_method[]" value="Beaten"> Beaten</label>
-                        <label><input type="checkbox" name="empty_method[]" value="Bag empties freely"> Bag empties freely</label>
+                        <label><input type="checkbox" name="empty_method[]" value="Bag empties freely"> Bag empties
+                            freely</label>
                     </div>
                 </div>
 
@@ -396,7 +412,8 @@
                         <label><input type="radio" name="bag_lined" value="No"> No</label>
                         <label style="display: flex; align-items: center; gap: 5px;">
                             <input type="radio" name="bag_lined" value="Yes"> Yes - Liner type:
-                            <input type="text" name="liner_type" placeholder="(Fitted or Tubular?)" style="width: auto;">
+                            <input type="text" name="liner_type" placeholder="(Fitted or Tubular?)"
+                                style="width: auto;">
                         </label>
                     </div>
                 </div>
@@ -504,7 +521,8 @@
                     <div class="col form-group">
                         <label>Flowability:</label>
                         <div class="radio-group">
-                            <label><input type="radio" name="flowability" value="Very free flowing"> Very free flowing</label>
+                            <label><input type="radio" name="flowability" value="Very free flowing"> Very free
+                                flowing</label>
                             <label><input type="radio" name="flowability" value="Free flowing"> Free flowing</label>
                             <label><input type="radio" name="flowability" value="Sluggish"> Sluggish</label>
                         </div>
@@ -520,7 +538,7 @@
                     <label><input type="checkbox" name="composition[]" value="Pellet"> Pellet</label>
                     <label><input type="checkbox" name="composition[]" value="Flake"> Flake</label>
                     <label style="display: flex; align-items: center; gap: 5px;">
-                        <input type="checkbox" name="composition[]" value="Other"> Other: 
+                        <input type="checkbox" name="composition[]" value="Other"> Other:
                         <input type="text" name="composition_other_text" style="width: auto;">
                     </label>
                 </div>
@@ -548,7 +566,7 @@
                     <label><input type="checkbox" name="characteristics[]" value="Hygroscopic"> Hygroscopic</label>
                     <label><input type="checkbox" name="characteristics[]" value="Friable"> Friable</label>
                     <label style="display: flex; align-items: center; gap: 5px;">
-                        <input type="checkbox" name="characteristics[]" value="Other"> Other: 
+                        <input type="checkbox" name="characteristics[]" value="Other"> Other:
                         <input type="text" name="characteristics_other_text" style="width: auto;">
                     </label>
                 </div>
@@ -563,7 +581,8 @@
                         <label><input type="checkbox" name="atmospheric[]" value="Corrosive"> Corrosive</label>
                         <label><input type="checkbox" name="atmospheric[]" value="Explosive"> Explosive</label>
                         <label><input type="checkbox" name="atmospheric[]" value="High humidity"> High humidity</label>
-                        <label><input type="checkbox" name="atmospheric[]" value="High temperature"> High temperature</label>
+                        <label><input type="checkbox" name="atmospheric[]" value="High temperature"> High
+                            temperature</label>
                         <label><input type="checkbox" name="atmospheric[]" value="Dirty"> Dirty</label>
                     </div>
                 </div>
@@ -619,8 +638,10 @@
                 <div class="form-group" style="margin-top: 15px;">
                     <label>Dust containment:</label>
                     <div class="radio-group">
-                        <label><input type="radio" name="dust_containment" value="Internal required"> Internal required</label>
-                        <label><input type="radio" name="dust_containment" value="External collection available"> External collection available</label>
+                        <label><input type="radio" name="dust_containment" value="Internal required"> Internal
+                            required</label>
+                        <label><input type="radio" name="dust_containment" value="External collection available">
+                            External collection available</label>
                         <label><input type="radio" name="dust_containment" value="None"> None</label>
                     </div>
                 </div>
@@ -633,9 +654,10 @@
                         <label>Frame:</label>
                         <div class="checkbox-group">
                             <label><input type="checkbox" name="frame[]" value="Carbon Steel"> Carbon Steel</label>
-                            <label><input type="checkbox" name="frame[]" value="#304 Stainless Steel"> #304 Stainless Steel</label>
+                            <label><input type="checkbox" name="frame[]" value="#304 Stainless Steel"> #304 Stainless
+                                Steel</label>
                             <label style="display: flex; align-items: center; gap: 5px;">
-                                <input type="checkbox" name="frame[]" value="Finish"> Finish: 
+                                <input type="checkbox" name="frame[]" value="Finish"> Finish:
                                 <input type="text" name="frame_finish" style="width: auto;">
                             </label>
                         </div>
@@ -646,10 +668,12 @@
                     <div class="col form-group">
                         <label>Material contact:</label>
                         <div class="checkbox-group">
-                            <label><input type="checkbox" name="material_contact[]" value="Carbon Steel"> Carbon Steel</label>
-                            <label><input type="checkbox" name="material_contact[]" value="#304 Stainless Steel"> #304 Stainless Steel</label>
+                            <label><input type="checkbox" name="material_contact[]" value="Carbon Steel"> Carbon
+                                Steel</label>
+                            <label><input type="checkbox" name="material_contact[]" value="#304 Stainless Steel"> #304
+                                Stainless Steel</label>
                             <label style="display: flex; align-items: center; gap: 5px;">
-                                <input type="checkbox" name="material_contact[]" value="Finish"> Finish: 
+                                <input type="checkbox" name="material_contact[]" value="Finish"> Finish:
                                 <input type="text" name="material_contact_finish" style="width: auto;">
                             </label>
                         </div>
@@ -660,12 +684,13 @@
                     <label>Bag suspension method:</label>
                     <div style="margin-left: 20px;">
                         <label style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
-                            <input type="checkbox" name="bag_suspension[]" value="Forklift transport frame"> Forklift transport frame
+                            <input type="checkbox" name="bag_suspension[]" value="Forklift transport frame"> Forklift
+                            transport frame
                         </label>
                         <label style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
                             <input type="checkbox" name="bag_suspension[]" value="Hoist and Trolley"> Hoist and Trolley
                         </label>
-                        
+
                         <div style="margin-left: 30px;">
                             <label style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
                                 <input type="checkbox" name="hoist_type[]" value="Electric hoist"> Electric hoist
@@ -674,7 +699,7 @@
                                 <input type="checkbox" name="hoist_type[]" value="Air hoist"> Air hoist
                             </label>
                         </div>
-                        
+
                         <label style="display: flex; align-items: center; gap: 5px; margin-bottom: 5px;">
                             <input type="checkbox" name="bag_suspension[]" value="Half-Frame"> Half-Frame
                         </label>
@@ -712,7 +737,8 @@
                         <label><input type="checkbox" name="utilities_env[]" value="4"> 4</label>
                         <label><input type="checkbox" name="utilities_env[]" value="4X"> 4X</label>
                         <label style="display: flex; align-items: center; gap: 5px;">
-                            <input type="checkbox" name="utilities_env[]" value="Explosion Proof"> Explosion Proof - List Class, Group & Division: 
+                            <input type="checkbox" name="utilities_env[]" value="Explosion Proof"> Explosion Proof -
+                            List Class, Group & Division:
                             <input type="text" name="utilities_explosion_proof_details" style="width: auto;">
                         </label>
                     </div>

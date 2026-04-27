@@ -255,6 +255,17 @@
             line-height: 1.4;
         }
 
+        .header-address a {
+            font-size: 14px;
+            color: #666;
+            text-decoration: none;
+        }
+
+        .header-address a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
         /* Tablets */
         @media (max-width: 992px) {
             .top-logo {
@@ -292,7 +303,8 @@
                 text-overflow: ellipsis;
                 /* adds ... if too long */
             }
-             /* Mobile Header Fix */
+
+            /* Mobile Header Fix */
             .form-header {
                 flex-direction: column;
                 align-items: center;
@@ -322,7 +334,9 @@
                 <img src="../images/hspl-logo.png" alt="Company Logo">
             </div>
             <div class="icon-content header-address">
-                <h3 class="wt-tilte">Address</h3>
+                <h3 class="wt-tilte">
+                    Email: <a href="mailto:info@hspl.in.net" class="email-link">info@hspl.in.net</a>
+                </h3>
                 <p>D-24 Sardar Estate, Ajwa Road, Vadodara, Gujarat, India</p>
             </div>
         </div>
