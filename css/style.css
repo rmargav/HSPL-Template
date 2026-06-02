@@ -6707,7 +6707,7 @@ button.scroltop:active {
   border-radius: 50%;
   padding: 0.5px;
   background: #0a8447; /* Green background for inner circle */
-  border: 2px solid white;  /* White border around inner circle */
+  /* border: 2px solid white;  White border around inner circle */
   z-index: -1;
   transition: background 0.2s;
 }

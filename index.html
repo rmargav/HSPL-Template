@@ -45,6 +45,104 @@
     <link rel="stylesheet" type="text/css" href="plugins/revolution/revolution/css/settings.css">
     <!-- REVOLUTION NAVIGATION STYLE -->
     <link rel="stylesheet" type="text/css" href="plugins/revolution/revolution/css/navigation.css">
+    <style>
+        /* Product Cards */
+        .product-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
+            border: 1px solid #e8e8e8;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Header Box */
+        .product-header {
+            height: 220px;
+            /* Fixed height for all devices */
+            padding: 25px 20px;
+            background: #e7e7e7;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 1px solid #ececec;
+        }
+
+        /* Product Title */
+        .product-title {
+            margin: 0;
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .product-title a {
+            color: #222;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .product-title a:hover {
+            color: #008dd4;
+        }
+
+        /* Content */
+        .product-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .product-content p {
+            margin-bottom: 15px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Tablet */
+        @media (max-width: 991px) {
+            .product-header {
+                height: 220px;
+            }
+
+            .product-title {
+                font-size: 22px;
+            }
+
+            .product-content {
+                padding: 25px;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 767px) {
+            .product-header {
+                height: 220px;
+                padding: 100px 20px;
+            }
+
+            .product-thumb {
+                width: 70px;
+                height: 70px;
+            }
+
+            .product-title {
+                font-size: 22px;
+                line-height: 1.4;
+            }
+
+            .product-content {
+                padding: 25px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -354,7 +452,7 @@
             <!-- SLIDER END -->
 
             <!-- ABOUT SECTION START -->
-            <div class="section-full p-t120 p-b90 bg-no-repeat bg-center bg-gray-light">
+            <div class="section-full p-t80 p-b60 bg-no-repeat bg-center bg-gray-light">
                 <div class="about-section-two">
                     <div class="container">
                         <div class="section-content">
@@ -418,7 +516,8 @@
 
                                         <div class="ab-two-info">
                                             <p>
-                                                Hapman Systems Private Limited is a Gujarat-India based engineering company
+                                                Hapman Systems Private Limited is a Gujarat-India based engineering
+                                                company
                                                 established in 2007, with over 17 years of experience in designing
                                                 customized bulk material handling systems. We specialize in delivering
                                                 reliable, efficient, and application-specific solutions for handling
@@ -436,173 +535,119 @@
             </div>
             <!-- ABOUT SECTION END -->
 
-            <!-- SERVICES SECTION START -->
-            <div class="section-full p-t20  p-b90" style="background-image:url(images/background/map-bg-dark2.png);">
+            <!-- PRODUCTS SECTION START -->
+            <div class="section-full p-t20 p-b90 product-section">
                 <div class="container">
 
-                    <!-- TITLE START-->
+                    <!-- TITLE START -->
                     <div class="section-head center wt-small-separator-outer">
-                        <div class="wt-small-separator site-text-primary">
-                        </div>
                         <h2 class="wt-title">Our Products</h2>
                     </div>
-                    <!-- TITLE END-->
+                    <!-- TITLE END -->
 
-                    <div class="s-section m-b30">
-                        <div class="row">
+                    <div class="row">
 
-                            <!-- COLUMNS 1 -->
-                            <div class="col-lg-4 col-md-6 m-b30">
-                                <div class="service-icon-box-two">
-                                    <div class="wt-icon-box-wraper">
-                                        <div class="icon-xl inline-icon">
-                                            <span class="icon-cell site-text-primary product-icon">
-                                                <img src="images/hspl-images/GIFs/Flexible-Screw-Conveyor.gif"
-                                                    alt="Product">
-                                            </span>
-                                        </div>
+                        <!-- PRODUCT 1 -->
+                        <div class="col-lg-4 col-md-6 m-b30">
+                            <div class="product-card">
+
+                                <div class="product-header">
+                                    <div class="product-thumb">
                                     </div>
-                                    <div class="service-icon-box-title">
-                                        <h3 class="wt-title"><a href="product-01_FlexibleScrewConveyors.html">Flexible
-                                                Screw Conveyors</a></h3>
-                                    </div>
-                                    <div class="service-icon-box-content">
-                                        <p>Efficient solution for transferring bulk materials with flexible routing and
-                                            low maintenance.</p>
-                                        <a href="product-01_FlexibleScrewConveyors.html"
-                                            class="site-button-link site-text-primary">View Details</a>
-                                    </div>
+
+                                    <h3 class="product-title">
+                                        <a href="product-01_FlexibleScrewConveyors.html">
+                                            Flexible Screw Conveyors
+                                        </a>
+                                    </h3>
                                 </div>
-                            </div>
 
-                            <!-- COLUMNS 2 -->
-                            <div class="col-lg-4 col-md-6 m-b30">
-                                <div class="service-icon-box-two">
-                                    <div class="wt-icon-box-wraper">
-                                        <div class="icon-xl inline-icon">
-                                            <span class="icon-cell site-text-primary product-icon">
-                                                <img src="images/hspl-images/GIFs/Bulk-Bag-Unloaders.gif" alt="Product">
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="service-icon-box-title">
-                                        <h3 class="wt-title"><a href="product-02_BulkBagUnloaders.html">Bulk Bag
-                                                Unloaders</a></h3>
-                                    </div>
-                                    <div class="service-icon-box-content">
-                                        <p>Designed for safe and dust-free unloading of bulk bags with consistent and
-                                            reliable material flow efficiency.
-                                        </p>
-                                        <a href="product-02_BulkBagUnloaders.html"
-                                            class="site-button-link site-text-primary">View Details</a>
-                                    </div>
+                                <div class="product-content">
+                                    <p>
+                                        Efficient solution for transferring bulk materials
+                                        with flexible routing and low maintenance.
+                                    </p>
+
+                                    <a href="product-01_FlexibleScrewConveyors.html"
+                                        class="site-button-link site-text-primary">
+                                        View Details
+                                    </a>
                                 </div>
-                            </div>
 
-                            <!-- COLUMNS 3 -->
-                            <div class="col-lg-4 col-md-6 m-b30">
-                                <div class="service-icon-box-two">
-                                    <div class="wt-icon-box-wraper">
-                                        <div class="icon-xl inline-icon">
-                                            <span class="icon-cell site-text-primary product-icon">
-                                                <img src="images/hspl-images/GIFs/Tabular-Drag-Conveyors.gif"
-                                                    alt="Product">
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="service-icon-box-title">
-                                        <h3 class="wt-title"><a href="product-03_TabularDragConveyors.html">Tubular Drag
-                                                Conveyors</a></h3>
-                                    </div>
-                                    <div class="service-icon-box-content">
-                                        <p>Gentle conveying system ideal for handling fragile and abrasive materials
-                                            with minimal degradation.</p>
-                                        <a href="product-03_TabularDragConveyors.html"
-                                            class="site-button-link site-text-primary">View Details</a>
-                                    </div>
-                                </div>
                             </div>
-
-                            <!-- COLUMNS 4 -->
-                            <div class="col-lg-4 col-md-6 m-b30">
-                                <div class="service-icon-box-two">
-                                    <div class="wt-icon-box-wraper">
-                                        <div class="icon-xl inline-icon">
-                                            <span class="icon-cell site-text-primary product-icon">
-                                                <img src="images/hspl-images/Bag-Compactors.jpg" alt="Product">
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="service-icon-box-title">
-                                        <h3 class="wt-title"><a href="product-07_BagCompactors.html">Bag Compactors</a>
-                                        </h3>
-                                    </div>
-                                    <div class="service-icon-box-content">
-                                        <p>Reduces cleanup time with integrated safety features and minimal dust
-                                            exposure, ensuring quick disposal and versatile operation.</p>
-                                        <a href="product-07_BagCompactors.html"
-                                            class="site-button-link site-text-primary">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- COLUMNS 5 -->
-                            <div class="col-lg-4 col-md-6 m-b30">
-                                <div class="service-icon-box-two">
-                                    <div class="wt-icon-box-wraper">
-                                        <div class="icon-xl inline-icon">
-                                            <span class="icon-cell site-text-primary product-icon">
-                                                <img src="images/hspl-images/GIFs/Pneumatic-Conveyors.gif"
-                                                    alt="Product">
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="service-icon-box-title">
-                                        <h3 class="wt-title"><a href="product-05_PneumaticConveyors.html">Pneumatic
-                                                Conveyors</a>
-                                        </h3>
-                                    </div>
-                                    <div class="service-icon-box-content">
-                                        <p>High-efficiency system for conveying materials and granules through enclosed
-                                            pipelines.</p>
-                                        <a href="product-05_PneumaticConveyors.html"
-                                            class="site-button-link site-text-primary">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- COLUMNS 6 -->
-                            <div class="col-lg-4 col-md-6 m-b30">
-                                <div class="service-icon-box-two">
-                                    <div class="wt-icon-box-wraper">
-                                        <div class="icon-xl inline-icon">
-                                            <span class="icon-cell site-text-primary product-icon">
-                                                <img src="images/hspl-images/GIFs/Sack-Tip-Stations.gif" alt="Product">
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="service-icon-box-title">
-                                        <h3 class="wt-title"><a href="product-06_SackTipStations.html">Sack Tip
-                                                Stations</a></h3>
-                                    </div>
-                                    <div class="service-icon-box-content">
-                                        <p>Dust-controlled manual dumping station for safe and clean material handling
-                                            operations with enhanced operator safety and efficiency.
-                                        </p>
-                                        <a href="product-06_SackTipStations.html"
-                                            class="site-button-link site-text-primary">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
-                        <div class="text-center">
-                            <a href="product.html" class="site-button sb-bdr-dark">Explore All Products</a>
+
+                        <!-- PRODUCT 2 -->
+                        <div class="col-lg-4 col-md-6 m-b30">
+                            <div class="product-card">
+
+                                <div class="product-header">
+                                    <div class="product-thumb">
+                                    </div>
+
+                                    <h3 class="product-title">
+                                        <a href="product-02_BulkBagUnloaders.html">
+                                            Bulk Bag Unloaders
+                                        </a>
+                                    </h3>
+                                </div>
+
+                                <div class="product-content">
+                                    <p>
+                                        Designed for safe and dust-free unloading of bulk
+                                        bags with consistent and reliable material flow.
+                                    </p>
+
+                                    <a href="product-02_BulkBagUnloaders.html"
+                                        class="site-button-link site-text-primary">
+                                        View Details
+                                    </a>
+                                </div>
+
+                            </div>
                         </div>
+
+                        <!-- PRODUCT 3 -->
+                        <div class="col-lg-4 col-md-6 m-b30">
+                            <div class="product-card">
+
+                                <div class="product-header">
+                                    <div class="product-thumb">
+                                    </div>
+
+                                    <h3 class="product-title">
+                                        <a href="product-03_TabularDragConveyors.html">
+                                            Tubular Drag Conveyors
+                                        </a>
+                                    </h3>
+                                </div>
+
+                                <div class="product-content">
+                                    <p>
+                                        Gentle conveying system ideal for handling fragile
+                                        and abrasive materials with minimal degradation.
+                                    </p>
+
+                                    <a href="product-03_TabularDragConveyors.html"
+                                        class="site-button-link site-text-primary">
+                                        View Details
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
                     </div>
+
+                    <div class="text-center mt-4">
+                        <a href="product.html" class="site-button sb-bdr-dark">
+                            Explore All Products
+                        </a>
+                    </div>
+
                 </div>
             </div>
-            <!-- SERVICES SECTION END -->
+            <!-- PRODUCTS SECTION END -->
 
             <!-- SOME FACTS START -->
             <div class="section-full p-b90 site-bg-primary" style="background-image:url(images/background/c1.jpg);">
