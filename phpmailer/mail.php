@@ -30,26 +30,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // 🛑 2. AVOID SPAM FILTERS ON BIGROCK 🛑
     // Using a domain email prevents Gmail/Yahoo from blocking the message
-    $headers .= "From: $email\r\n";  // info@hspl.in.net this email id was there, replaced $email
+    $headers .= "From: HSPL Website <info@hspl.in.net>\r\n";
+$headers .= "Reply-To: $email\r\n";  // info@hspl.in.net this email id was there, replaced $email
     
     // This allows your client to hit 'Reply' and email the user directly
     $headers .= "Reply-To: $email\r\n";
 
     // Send mail and output JavaScript for the alert box
-    if (mail($to, $subject, $body, $headers)) {
-        // Success: Show alert and send them back to the contact page
-        // Note: Using document.referrer sends them back to the exact page they came from
-        echo "<script>
-                alert('Message sent successfully!'); 
-                window.location.href = document.referrer;
-              </script>";
-    } else {
-        // Failure: Show alert and let them try again
-        echo "<script>
-                alert('Message failed to send. Please try again later.'); 
-                window.history.back();
-              </script>";
-    }
+    if(mail($to,$subject,$body,$headers))
+{
+    header("Location: ../contact.html?status=success");
+    exit();
+}
+else
+{
+    header("Location: ../contact.html?status=error");
+    exit();
+}
 }
 
 ?>
